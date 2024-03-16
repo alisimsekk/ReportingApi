@@ -1,7 +1,9 @@
 package com.alisimsek.ReportingApi.controller;
 
+import com.alisimsek.ReportingApi.dto.request.TransactionReportRequest;
 import com.alisimsek.ReportingApi.dto.request.TransactionRequest;
 import com.alisimsek.ReportingApi.dto.response.transaction.TransactionResponse;
+import com.alisimsek.ReportingApi.dto.response.transactionReport.TransactionReportResponse;
 import com.alisimsek.ReportingApi.service.TransactionService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,5 +23,10 @@ public class TransactionController {
     @PostMapping("/transaction")
     public ResponseEntity<TransactionResponse> getTransaction(@Valid @RequestBody TransactionRequest transactionRequest){
         return ResponseEntity.ok(transactionService.getTransaction(transactionRequest));
+    }
+
+    @PostMapping("/transactions/report")
+    public ResponseEntity<TransactionReportResponse> getTransactionReport(@Valid @RequestBody TransactionReportRequest transactionReportRequest){
+        return ResponseEntity.ok(transactionService.getTransactionReport(transactionReportRequest));
     }
 }

@@ -1,8 +1,9 @@
 package com.alisimsek.ReportingApi.service;
 
+import com.alisimsek.ReportingApi.dto.request.TransactionReportRequest;
 import com.alisimsek.ReportingApi.dto.request.TransactionRequest;
-import com.alisimsek.ReportingApi.dto.response.client.ClientResponse;
 import com.alisimsek.ReportingApi.dto.response.transaction.TransactionResponse;
+import com.alisimsek.ReportingApi.dto.response.transactionReport.TransactionReportResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -23,6 +24,9 @@ public class TransactionService {
     @Value("${api.url.transaction}")
     private String API_URL_TRANSACTION;
 
+    @Value("${api.url.transactions.report}")
+    private String API_URL_TRANSACTION_REPORT;
+
     public TransactionResponse getTransaction(TransactionRequest transactionRequest) {
         String authorizationHeader = getAuthorizationHeader();
 
@@ -35,6 +39,21 @@ public class TransactionService {
                 API_URL_TRANSACTION, HttpMethod.POST,requestEntity, TransactionResponse.class);
 
         return responseEntity.getBody();
+    }
+
+    public TransactionReportResponse getTransactionReport(TransactionReportRequest transactionReportRequest) {
+        String authorizationHeader = getAuthorizationHeader();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", authorizationHeader);
+
+        HttpEntity<TransactionReportRequest> requestEntity = new HttpEntity<>(transactionReportRequest,headers);
+
+        ResponseEntity<TransactionReportResponse> responseEntity = restTemplate.exchange(
+                API_URL_TRANSACTION_REPORT, HttpMethod.POST,requestEntity, TransactionReportResponse.class);
+
+        return responseEntity.getBody();
+
     }
 
     private String getAuthorizationHeader() {
