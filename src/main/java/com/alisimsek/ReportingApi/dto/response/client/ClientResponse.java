@@ -13,5 +13,5 @@ public class ClientResponse {
 
     private String status;
     private String message;
-    private CustomerInfoResponse customerInfo;
+    private CustomerInfoDto customerInfo;
 }
