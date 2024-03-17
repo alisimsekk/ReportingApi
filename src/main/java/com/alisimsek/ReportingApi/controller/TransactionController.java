@@ -14,18 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/transactions")
 @RequiredArgsConstructor
 public class TransactionController {
 
     private final TransactionService transactionService;
 
-    @PostMapping("/transaction")
+    @PostMapping
     public ResponseEntity<TransactionResponse> getTransaction(@Valid @RequestBody TransactionRequest transactionRequest){
         return ResponseEntity.ok(transactionService.getTransaction(transactionRequest));
     }
 
-    @PostMapping("/transactions/report")
+    @PostMapping("/report")
     public ResponseEntity<TransactionReportResponse> getTransactionReport(@Valid @RequestBody TransactionReportRequest transactionReportRequest){
         return ResponseEntity.ok(transactionService.getTransactionReport(transactionReportRequest));
     }
