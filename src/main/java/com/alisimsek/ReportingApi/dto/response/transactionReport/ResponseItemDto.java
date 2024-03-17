@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ResponseItemDto {
 
+    private String currency;
     private int count;
     private Long total;
-    private String currency;
 }

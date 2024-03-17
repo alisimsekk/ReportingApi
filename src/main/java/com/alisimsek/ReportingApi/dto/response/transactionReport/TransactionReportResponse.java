@@ -12,5 +12,6 @@ import java.util.List;
 public class TransactionReportResponse {
 
     private String status;
+    private String message;
     private List<ResponseItemDto> response;
 }
