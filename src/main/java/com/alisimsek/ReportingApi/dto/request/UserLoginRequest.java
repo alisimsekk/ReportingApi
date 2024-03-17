@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserLoginRequest {
 
-    @NotNull
+    @NotNull (message = "Email can't be empty")
     @Size(max = 128)
     @Email
     private String email;
 
-    @NotNull
+    @NotNull (message = "Password can't be empty")
     @Size(max = 32)
     private String password;
 }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TransactionRequest {
 
-    @NotNull
+    @NotNull (message = "TransactionId can't be empty")
     @Size(max = 32)
     private String transactionId;
 }

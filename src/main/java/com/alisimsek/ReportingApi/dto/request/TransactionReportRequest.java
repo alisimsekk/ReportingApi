@@ -13,11 +13,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class TransactionReportRequest {
 
-    @NotNull
+    @NotNull (message = "FromDate can't be empty")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fromDate;
 
-    @NotNull
+    @NotNull (message = "ToDate can't be empty")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate toDate;
 
