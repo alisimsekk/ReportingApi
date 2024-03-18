@@ -1,0 +1,11 @@
+{
+  "name": "ReportingApi",
+  "addons": [
+    "logentries"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/maven"
+    }
+  ]
+}
