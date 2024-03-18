@@ -33,12 +33,12 @@ mvn spring-boot:run
 ## Usage
 Once the application is running, you can access the endpoints defined in the Reporting API documentation.
 
-| Endpoint                         | Description                 |
-|----------------------------------|-----------------------------|
-| /api/v3/merchant/user/login      | Merchant login endpoint     |
-| /api/v3/transactions/report      | Transaction report endpoint |
-| /api/v3/transaction              | Get transaction endpoint    |
-| /api/v3/client                   | Get client endpoint         |
+| Endpoint                     | Description                 |
+|------------------------------|-----------------------------|
+| /api/v1/merchants/user/login | Merchant login endpoint     |
+| /api/v1/transactions/report  | Transaction report endpoint |
+| /api/v1/transactions         | Get transaction endpoint    |
+| /api/v1/clients               | Get client endpoint         |
 
 
 ## Credits
