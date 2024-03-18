@@ -9,10 +9,6 @@ This project is a Spring Boot application developed to consume endpoints. It inc
 - Mockito
 - Git
 
-## Deployment
-
-The project has been deployed to Heroku
-
 ## Setup
 
 - Clone the repository:  
@@ -29,6 +25,10 @@ mvn clean install
 
 - Run the application:  
 mvn spring-boot:run
+
+## Deployment
+
+The project has been deployed to Heroku is accessible at https://reporting-api-4b5d98d0e7da.herokuapp.com
 
 ## Usage
 Once the application is running, you can access the endpoints defined in the Reporting API documentation.
